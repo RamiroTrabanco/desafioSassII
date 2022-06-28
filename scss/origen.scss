@@ -1,0 +1,121 @@
+* {
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+
+
+@import "estructura";
+@import "animaciones";
+@import "estructuraTablet";
+@import "estructuraMobile";
+
+
+$blanco: white;
+$grisFondo: #525252;
+$negro: black;
+$grisTitulo:#414141;
+$colorBorde: #CA3E47;
+$colores: (
+    Blanco: white,
+    Negro: black,
+    Gris: #414141,
+);
+
+@each $nombre, $valor in $colores{
+    .fontColor#{$nombre}{
+        color: $valor;
+    }
+}
+
+                                                                                                                                    /*DESKTOP*/
+
+
+                                                                                                                                
+h1 {
+    background-image:url("https://pijamasurf.com/wp-content/uploads/10.208.149.45/uploads/2012/09/pizza_amore.jpg");
+    background-repeat: no-repeat;
+    background-position: left center;
+    font-size: 85px;
+    text-align: right;
+    border: solid $negro 20px;
+}
+
+.h2Titulo {
+    grid-area: titulo;
+    background-color: $grisFondo;
+    font-size: 30px;
+    text-decoration: underline;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 25px;
+    margin: 0;
+}
+
+nav {
+    background-image: linear-gradient(to bottom, $negro 90%, $grisFondo);
+    a {
+    font-size: 30px;
+    color:$colorBorde;
+    text-decoration: none;
+    padding-left: 10px;
+    margin-bottom: 15px;
+    border-left: solid $colorBorde 3px;
+    }
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+
+section {
+    padding-top: 25px;
+    padding-left: 25px;
+    background-image: linear-gradient(to bottom, $grisFondo 85%, $negro);
+    h3 {
+        padding: 25px;
+    };
+    img {
+        width: 250px;
+        height: 250px;
+        margin: 25px;
+    };
+    p {
+        font-size: 20px;
+        padding: 5px;
+    };
+    form label {
+        margin: 5px;
+        margin-left: 25%;
+        width: 50%;
+    };
+    form input {
+        margin: 5px;
+    }
+}
+
+article {
+    img {
+        width: 250px;
+        height: 250px;
+        margin: 25px;
+    };
+    h3 {
+    padding: 25px;
+    }
+}
+
+footer {
+    grid-area: pie;
+    font-size: 10px;
+    color:$blanco;
+    background-color: $negro;
+    padding: 5px;
+    padding-top: 20px;
+};
+
+

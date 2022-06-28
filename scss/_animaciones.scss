@@ -1,0 +1,24 @@
+$blanco: white;
+$grisFondo: #525252;
+$negro: black;
+$grisTitulo:#414141;
+$colorBorde: #CA3E47;
+
+.transicionNav {
+    transition: all 1s;
+}
+
+.transicionNav:hover {
+    transform:scale(1.12);
+    background-color: $blanco;
+    border-left: solid $colorBorde 7px;
+    padding-right: 5px;
+}
+
+.transicionProductos {
+    transition: all 1s;
+}
+
+.transicionProductos:hover {
+    transform:scale(1.15);
+}

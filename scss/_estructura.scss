@@ -1,0 +1,148 @@
+$blanco: white;
+$grisFondo: #525252;
+$negro: black;
+$grisTitulo:#414141;
+$colorBorde: #CA3E47;
+
+@mixin flex ($display, $direccion, $linea)
+{display: $display;
+flex-direction: $direccion;
+flex-wrap: $linea;}
+
+
+.navFlex {
+    @include flex (flex, row, nowrap);
+    justify-content: space-evenly;
+}
+
+.gridFlex {
+    display: grid;
+    grid-template-areas:
+    "cabeza cabeza"
+    "nav nav"
+    "bienvenida ingresos"
+    "pie pie"
+    ;
+    grid-template-columns: 25% auto;
+    grid-template-rows: 13% 5% 70% auto;
+}
+
+header {
+    grid-area: cabeza;
+}
+
+nav {
+    grid-area: nav;
+}
+
+span {
+    grid-area: bienvenida;
+}
+
+section {
+    grid-area: ingresos;
+}
+
+#productos {
+    grid-area: productos;
+    background-image: linear-gradient(to bottom, $grisFondo 85%, $negro);
+    padding-top: 25px;
+}
+
+.gridProductos {
+    @extend .gridFlex;
+    grid-template-areas:
+    "cabeza cabeza"
+    "nav nav"
+    "titulo titulo"
+    "ingresos productos"
+    "pie pie"
+    ;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 13% 5% auto auto 12%;
+}
+
+.productosFlex {
+    @include flex (flex, column, wrap);
+    align-items: center;
+}
+
+
+.gridOutlet {
+    @extend .gridProductos;
+    grid-template-areas:
+    "cabeza cabeza"
+    "nav nav"
+    "titulo titulo"
+    "ingresos ingresos"
+    "pie pie"
+    ;
+}
+
+.outletFlex {
+    @extend .productosFlex;
+}
+
+
+
+.gridVisitanos {
+    @extend .gridOutlet
+    ;
+    grid-template-rows: 13% 5% 10% auto 12%;
+}
+
+.visitanosFlex {
+    @extend .productosFlex;
+}
+
+.gridContacto {    
+    @extend .gridProductos;
+    grid-template-areas:
+    "cabeza cabeza"
+    "nav nav"
+    "ingresos ingresos"
+    "pie pie"
+    ;
+    grid-template-rows: 13% 5% auto 12%;
+}
+
+.contactoFlex {
+    @extend .productosFlex;
+}
+
+#formulario {
+    padding: 40px;
+}
+
+.flexFooter {
+    @include flex(flex, column, nowrap);
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.indexFlex {
+    @include flex (flex, column, nowrap);
+    align-items: center;
+    padding: 100px;
+}
+
+section {
+    h2 {
+        font-size: 30px;
+        padding: 5px;
+        text-decoration: underline;
+    };
+    iframe {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+}
+
+.indexSpanFlex {
+    @include flex (flex, column, nowrap);
+    justify-content: center;
+    text-align: center;
+    font-size: 16px;
+    padding-left: 70px;
+    background-image: linear-gradient(to bottom, $grisFondo 85%, $negro);
+}
